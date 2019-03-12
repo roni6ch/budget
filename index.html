@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>תקציב שנתי</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="תקציב שנתי" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Roboto|Material+Icons" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body id="body">
+    <h1>מעקב הוצאות</h1>
+
+    <div id="wrapper">
+        <div id="dataWrapper">
+
+
+            <form>
+                <div class="row">
+
+                    <div class="col">
+                        <div class="md-form mt-0">
+                            <input type="text" class="form-control" placeholder="כרטסת" id="karteset">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="md-form mt-0">
+                            <input type="text" class="form-control" placeholder="מס תנועת יומן" id="tnuat_yoman">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="md-form mt-0">
+                            <input type="text" class="form-control" placeholder="תאריך מאזן" id="taarich_maazan">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="md-form mt-0">
+                            <input type="text" class="form-control" placeholder="תאריך ערך" id="taarich_erech">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="md-form mt-0">
+                            <input type="text" class="form-control" placeholder="פרטים" id="pratim">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="md-form mt-0">
+                            <input type="text" class="form-control" placeholder="אסמכתא" id="asmachta">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="md-form mt-0">
+                            <input type="text" class="form-control" placeholder="חובה" id="hova">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="md-form mt-0">
+                            <input type="text" class="form-control" placeholder="זכות" id="zchut">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="md-form mt-0">
+                            <input type="text" class="form-control" placeholder="יתרה" id="yitra">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="setTR()">עדכן רשומה</button>
+                </div>
+            </form>
+
+
+        </div>
+        <hr>
+
+        <table id="data" class="table table-bordered table-sm" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="th-sm">כרטסת
+                    </th>
+                    <th class="th-sm">מס תנועת יומן
+                    </th>
+                    <th class="th-sm">תאריך מאזן
+                    </th>
+                    <th class="th-sm">תאריך ערך
+                    </th>
+                    <th class="th-sm">פרטים
+                    </th>
+                    <th class="th-sm">אסמכתא
+                    </th>
+                    <th class="th-sm">חובה
+                    </th>
+                    <th class="th-sm">זכות
+                    </th>
+                    <th class="th-sm">יתרה
+                    </th>
+                    <th class="th-sm">פעולות
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- FireBase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAOayfippyRhf50LJRU7yNke3_kVBSLxq0",
+            authDomain: "budget-897cf.firebaseapp.com",
+            databaseURL: "https://budget-897cf.firebaseio.com",
+            projectId: "budget-897cf",
+            storageBucket: "budget-897cf.appspot.com",
+            messagingSenderId: "251326094323"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!--  Scripts-->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
